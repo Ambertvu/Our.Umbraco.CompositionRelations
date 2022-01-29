@@ -1,0 +1,27 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <CompositionRelationsContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\CompositionRelations\**\*.*</CompositionRelationsContentFilesPath>
+  </PropertyGroup>
+
+  <Target Name="CopyCompositionRelationsAssets" BeforeTargets="Build">
+    <ItemGroup>
+      <CompositionRelationsContentFiles Include="$(CompositionRelationsContentFilesPath)" />
+    </ItemGroup>
+    <Message Text="Copying CompositionRelations files: $(CompositionRelationsContentFilesPath) - #@(CompositionRelationsContentFiles->Count()) files"  Importance="high" />
+    <Copy
+      SourceFiles="@(CompositionRelationsContentFiles)"
+      DestinationFiles="@(CompositionRelationsContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\CompositionRelations\%(RecursiveDir)%(Filename)%(Extension)')"
+      SkipUnchangedFiles="true" />
+
+  </Target>
+
+  <Target Name="ClearCompositionRelationsAssets" BeforeTargets="Clean">
+    <ItemGroup>
+      <CompositionRelationsDir Include="$(MSBuildProjectDirectory)\App_Plugins\CompositionRelations\" />
+    </ItemGroup>
+    <Message Text="Clear old CompositionRelations data"  Importance="high" />
+    <RemoveDir Directories="@(CompositionRelationsDir)"  />
+  </Target>
+
+</Project>

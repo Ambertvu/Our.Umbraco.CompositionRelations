@@ -1,0 +1,13 @@
+﻿<div ng-controller="CompositionRelationApp as vm">
+    <umb-box>
+        <umb-box-header title="This composition is used in the following docTypes"></umb-box-header>
+        <umb-box-content>
+            <div ng-repeat="(key, value) in vm.composedOf">
+                <a href="#/settings/documentTypes/edit/{{value}}">{{key}}</a>
+            </div>
+            <hr />
+
+          
+        </umb-box-content>
+    </umb-box>
+</div>

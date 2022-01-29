@@ -1,0 +1,7 @@
+﻿{
+
+  "javascript": [
+    "~/App_Plugins/CompositionRelations/compositionrelations.controller.js",
+    "~/App_Plugins/CompositionRelations/compositionrelations-api.resource.js"
+  ]
+}

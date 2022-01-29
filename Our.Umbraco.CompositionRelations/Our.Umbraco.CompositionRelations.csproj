@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <ContentTargetFolders>.</ContentTargetFolders>
+
+        <Product>Our.Umbraco.CompositionRelations</Product>
+        <PackageId>Our.Umbraco.CompositionRelations</PackageId>
+        <Title>Our.Umbraco.CompositionRelations</Title>
+        <PackageReadmeFile>readme.md</PackageReadmeFile>
+        <Authors>Erik-Jan Westendorp</Authors>
+
+
+        <Copyright>Copyright 2021</Copyright>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <Description>When you select a composition you can now easily see on which other documentTypes this composition has been used.</Description>
+
+        <PackageVersion>1.0.5</PackageVersion>
+        <Version>$(PackageVersion)</Version>
+
+        <PackageProjectUrl>https://github.com/Ambertvu/Our.Umbraco.CompositionRelations</PackageProjectUrl>
+        <PackageTags>Umbraco Package CompositionRelations</PackageTags>
+
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Umbraco.Cms.Web.Website" Version="9.0.0" />
+        <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="9.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="build\**\*.*">
+            <Pack>True</Pack>
+            <PackagePath>build</PackagePath>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="readme.md" Pack="true" PackagePath="\" />
+
+    </ItemGroup>
+</Project>
