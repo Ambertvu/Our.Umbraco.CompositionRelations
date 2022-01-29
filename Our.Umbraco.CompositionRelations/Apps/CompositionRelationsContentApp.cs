@@ -4,6 +4,7 @@ using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.ContentEditing;
 using Umbraco.Cms.Core.Models.Membership;
 using Umbraco.Cms.Core.Services;
+using Our.Umbraco.CompositionRelations.Static;
 
 namespace Our.Umbraco.CompositionRelations.Apps
 {
@@ -28,11 +29,11 @@ namespace Our.Umbraco.CompositionRelations.Apps
 
                 var compositionRelationsApp = new ContentApp
                 {
-                    Alias = "compositionRelations",
-                    Name = "Relations",
-                    Icon = "icon-filter-arrows",
-                    View = "/App_Plugins/CompositionRelations/compositionrelations.html",
-                    Weight = 0
+                    Alias = Constants.Apps.CompositionsRelationsApp.Alias,
+                    Name = Constants.Apps.CompositionsRelationsApp.Name,
+                    Icon = Constants.Apps.CompositionsRelationsApp.Icon,
+                    View = Constants.Apps.CompositionsRelationsApp.View,
+                    Weight = Constants.Apps.CompositionsRelationsApp.Weight
                 };
                 return compositionRelationsApp;
             }

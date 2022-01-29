@@ -6,11 +6,21 @@ namespace Our.Umbraco.CompositionRelations.Static
         public static class Package
         {
             public const string PluginName = "CompositionRelations";
-            public const string Name = "Our.Umbraco.CompositionRelations";
             public const string Alias = "ourUmbracoCompositionRelations";
-            public const string Icon = "icon-trafic";
         }
 
+        public static class Apps
+        {
+            public static class CompositionsRelationsApp
+            {
+                public const string Alias = "compositionRelations";
+                public const string Name = "Relations";
+                public const string Icon = "icon-filter-arrows";
+                public const string View = "/App_Plugins/CompositionRelations/compositionrelations.html";
+                public const int Weight = 0;
+
+            }
+        }
         public static class ApiPaths
         {
             public const string CompositionRelationsController = "compositionRelations";

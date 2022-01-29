@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Web.BackOffice.Controllers;
 using Umbraco.Cms.Web.Common.Attributes;
+using Our.Umbraco.CompositionRelations.Static;
 
 namespace Our.Umbraco.CompositionRelations.Controllers.Backoffice
 {
-    [PluginController("CompositionRelations")]
+    [PluginController(Constants.Package.PluginName)]
     public class CompositionRelationsController : UmbracoAuthorizedApiController
     {
         private readonly IContentTypeService _contentTypeService;
