@@ -7,14 +7,14 @@
         <PackageId>Our.Umbraco.CompositionRelations</PackageId>
         <Title>Our.Umbraco.CompositionRelations</Title>
         <PackageReadmeFile>readme.md</PackageReadmeFile>
-        <Authors>Erik-Jan Westendorp</Authors>
+        <Authors>Ambert van Unen /w support from Erik-Jan Westendorp</Authors>
 
 
         <Copyright>Copyright 2021</Copyright>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <Description>When you select a composition you can now easily see on which other documentTypes this composition has been used.</Description>
 
-        <PackageVersion>1.0.5</PackageVersion>
+        <PackageVersion>1.0.0-beta</PackageVersion>
         <Version>$(PackageVersion)</Version>
 
         <PackageProjectUrl>https://github.com/Ambertvu/Our.Umbraco.CompositionRelations</PackageProjectUrl>
