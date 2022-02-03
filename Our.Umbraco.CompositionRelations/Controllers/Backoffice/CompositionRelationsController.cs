@@ -4,6 +4,7 @@ using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Web.BackOffice.Controllers;
 using Umbraco.Cms.Web.Common.Attributes;
 using Our.Umbraco.CompositionRelations.Static;
+using System.Runtime.Serialization;
 
 namespace Our.Umbraco.CompositionRelations.Controllers.Backoffice
 {
@@ -18,17 +19,34 @@ namespace Our.Umbraco.CompositionRelations.Controllers.Backoffice
         }
 
         [HttpGet]
-        public Dictionary<string, int> GetRelationsForContentType(int nodeId)
+        public List<DocType> GetRelationsForContentType(int nodeId)
         {
             var composedOf = _contentTypeService.GetComposedOf(nodeId);
 
-            var usedIn = new Dictionary<string, int>();
+            var usedIn = new List<DocType>();
             foreach (var o in composedOf)
             {
-                usedIn.Add(o.Name, o.Id);
+                usedIn.Add(new DocType
+                { 
+                Name = o.Name,
+                Id =o.Id,
+                Icon = o.Icon
+                });
             }
 
             return usedIn;
         }
+    }
+
+    [DataContract(Name = "docType", Namespace = "")]
+    public class DocType
+    {
+        [DataMember(Name = "id")]
+        public int Id { get; set; }
+        [DataMember(Name = "name")]
+        public string Name { get; set; }
+        [DataMember(Name = "icon")]
+        public string Icon { get; set; }
+
     }
 }
