@@ -14,7 +14,7 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <Description>When you select a composition you can now easily see on which other documentTypes this composition has been used.</Description>
 
-        <PackageVersion>1.0.0</PackageVersion>
+        <PackageVersion>1.0.1</PackageVersion>
         <Version>$(PackageVersion)</Version>
 
         <PackageProjectUrl>https://github.com/Ambertvu/Our.Umbraco.CompositionRelations</PackageProjectUrl>
